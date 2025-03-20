@@ -31,8 +31,8 @@ Vagrant.configure("2") do |config|
           vb.cpus = 1
         end
 
-      master.ssh.insert_key = false
-      master.ssh.private_key_path = "~/.vagrant.d/insecure_private_key"
+        master.ssh.insert_key = false
+        master.ssh.private_key_path = "~/.vagrant.d/insecure_private_key"
 
         node.vm.provision "shell", inline: <<-SHELL
           dnf update -y
