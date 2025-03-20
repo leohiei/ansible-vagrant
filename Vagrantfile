@@ -31,10 +31,9 @@ Vagrant.configure("2") do |config|
           vb.cpus = 1
         end
 
-        node.ssh.insert_key = false
-        node.ssh.private_key_path = ['~/.vagrant.d/insecure_private_key', '~/.ssh/id_rsa']
-        node.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
-        
+      master.ssh.insert_key = false
+      master.ssh.private_key_path = "~/.vagrant.d/insecure_private_key"
+
         node.vm.provision "shell", inline: <<-SHELL
           dnf update -y
           dnf install -y vim net-tools
