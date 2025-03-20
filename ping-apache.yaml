@@ -1,0 +1,12 @@
+---
+- name: Executar ping e instalar Apache
+  hosts: master
+
+  tasks:
+    - name: Testando conexão com o host
+      ansible.builtin.ping:
+
+    - name: Instalando pacote httpd
+      yum:
+        name: httpd
+        state: present

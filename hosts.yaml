@@ -1,0 +1,22 @@
+all:
+  vars:
+    ansible_ssh_private_key_file: ~/.vagrant.d/insecure_private_key
+    ansible_user: vagrant
+    ansible_become: true
+    ansible_become_method: sudo
+    ansible_become_user: root
+  children:
+    customer1:
+      children:
+        master:
+          hosts:
+            master.lab.org:
+              ansible_host: 172.89.57.10
+        node:
+          hosts:
+            node1.lab.org:
+              ansible_host: 172.89.57.11
+            node2.lab.org:
+              ansible_host: 172.89.57.12
+            node3.lab.org:
+              ansible_host: 172.89.57.13
