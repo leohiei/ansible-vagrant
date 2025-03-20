@@ -33,13 +33,14 @@ O playbook ping-apache.yaml executa um teste de ping nos hosts especificados e, 
 ### 3. Executar o Playbook
 
 Para executar o playbook, use o comando abaixo. Certifique-se de passar o inventário correto e de ter configurado a autenticação SSH para os hosts.
-
+```bash
 ansible-playbook -i hosts.yaml ping-apache.yaml
+```
 
 Caso queira simular as mudanças sem realmente aplicar (modo de verificação), use o comando com a flag -C:
-
+```bash
 ansible-playbook -i hosts.yaml ping-apache.yaml -C
-
+```
 Importante: Certifique-se de que o usuário configurado para autenticação SSH tenha permissões adequadas de sudo para realizar as tarefas de instalação.
 Contribuindo
 
